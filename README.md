@@ -10,7 +10,7 @@ Metropolitan Statistical Areas (MSAs) are geographical regions defined by the U.
 
 Metropolitan Statistical Areas serve as a valuable tool for understanding the demographic and economic characteristics of urban regions in the United States and are instrumental in shaping policies and resource allocation at both federal and local levels.
 
-![**Source**: [Tampa-bay-E-Insights-Report](https://issuu.com/tampabaypartnership/docs/2023_e-insights_report_final)](State%20of%20Tampa%20Region-Insights%2033f9418fd4f14460b29b7d0f61d10dfd/Untitled.png)
+![**Source**: [Tampa-bay-E-Insights-Report](https://issuu.com/tampabaypartnership/docs/2023_e-insights_report_final)](ext/Untitled.png)
 
 **Source**: [Tampa-bay-E-Insights-Report](https://issuu.com/tampabaypartnership/docs/2023_e-insights_report_final)
 
@@ -112,7 +112,7 @@ Furthermore,**CPI Changes Over Time.**
 
 - Analyzing CPI changes over time is more informative than focusing on a specific CPI value. For example, if the CPI increased from 120 to 130 over a year, it suggests a 10% inflation rate during that year.
 
-![Source :  [US.Bureau of Labor Statistics](https://www.bls.gov/home.htm)](State%20of%20Tampa%20Region-Insights%2033f9418fd4f14460b29b7d0f61d10dfd/Untitled%201.png)
+![Source :  [US.Bureau of Labor Statistics](https://www.bls.gov/home.htm)](ext/Untitled%201.png)
 
 Source :  [US.Bureau of Labor Statistics](https://www.bls.gov/home.htm)
 
@@ -124,7 +124,7 @@ Insights:
 - As it stands, Tampa ranks 4 in terms of current CPI.
 - Let us take a closer look though.
 
-![Untitled](State%20of%20Tampa%20Region-Insights%2033f9418fd4f14460b29b7d0f61d10dfd/Untitled%202.png)
+![Untitled](ext/Untitled%202.png)
 
 - Tampa’s CPI is growing quickly month on month. From this data we see that Tampa’s CPI is increasing at a rate of roughly 1.4% month on month.
 - Effects of a rapidly increasing CPI:
@@ -142,7 +142,7 @@ What does it signify?
 - Investors and financial markets closely monitor wage growth as it can impact corporate earnings, stock market performance, and investment decisions.
 - Regions with strong wage growth trends may be more attractive to skilled workers. Businesses in these areas may have an advantage in attracting and retaining talent.
 
-![Source:[US.Labour Statistics](https://www.bls.gov/charts/metro-area-employment-and-unemployment/metro-area-oty-percent-change-in-average-weekly-earnings.htm)](State%20of%20Tampa%20Region-Insights%2033f9418fd4f14460b29b7d0f61d10dfd/Untitled%203.png)
+![Source:[US.Labour Statistics](https://www.bls.gov/charts/metro-area-employment-and-unemployment/metro-area-oty-percent-change-in-average-weekly-earnings.htm)](ext/Untitled%203.png)
 
 Source:[US.Labour Statistics](https://www.bls.gov/charts/metro-area-employment-and-unemployment/metro-area-oty-percent-change-in-average-weekly-earnings.htm)
 
@@ -158,7 +158,7 @@ About the data:
 
 ### Closer look at what the wages compare
 
-![Untitled](State%20of%20Tampa%20Region-Insights%2033f9418fd4f14460b29b7d0f61d10dfd/Untitled%204.png)
+![Untitled](ext/Untitled%204.png)
 
 For Tampa in particular:
 
@@ -182,7 +182,7 @@ What Insights could Debt to Income Ratio bring out?
 - **Consumer Spending Capacity:** Residents with lower DTI ratios typically have more disposable income, which can stimulate consumer spending, drive local economic activity, and boost the overall economy of the MSA.
 - **Individual Financial Health:** The DTI ratio measures the proportion of an individual's income that goes toward debt obligations, such as mortgage payments, student loans, credit card debt, and other loans. High DTI ratios may indicate financial stress and reduced affordability for residents in the MSA.
 
-![Source:[US federal Reserve](https://www.federalreserve.gov/releases/z1/dataviz/household_debt/msa/map/#year:2023)](State%20of%20Tampa%20Region-Insights%2033f9418fd4f14460b29b7d0f61d10dfd/Untitled%205.png)
+![Source:[US federal Reserve](https://www.federalreserve.gov/releases/z1/dataviz/household_debt/msa/map/#year:2023)](ext/Untitled%205.png)
 
 Source:[US federal Reserve](https://www.federalreserve.gov/releases/z1/dataviz/household_debt/msa/map/#year:2023)
 
