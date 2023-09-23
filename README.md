@@ -171,7 +171,7 @@ For Tampa in particular:
 The Debt-to-Income (DTI) ratio is a financial metric that measures the relationship between an individual's or a household's total monthly debt payments and their gross monthly income.
 
 $$
-DTI =  \frac{Total \, Monthly \, Debt\,Payments}{Gross\,Monthly\, Income}
+DTI =  \frac{Total Monthly Debt Payments}{Gross Monthly Income}
 $$
 
 It is a relevant and important financial metric that can provide valuable insights into the financial health and affordability of individuals within a Metropolitan Statistical Area (MSA).
