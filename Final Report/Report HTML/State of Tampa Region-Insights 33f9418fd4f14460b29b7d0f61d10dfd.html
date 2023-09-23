@@ -1,0 +1,686 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>State of Tampa Region-Insights</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="33f9418f-d4f1-4460-b29b-7d0f61d10dfd" class="page sans"><header><img class="page-cover-image" src="State%20of%20Tampa%20Region-Insights%2033f9418fd4f14460b29b7d0f61d10dfd/Tmap.jpeg" style="object-position:center 53.059999999999995%"/><h1 class="page-title">State of Tampa Region-Insights</h1><p class="page-description"></p></header><div class="page-body"><h3 id="c19152fd-9cb4-4f17-a548-3b0c7732e55c" class="">Introduction</h3><p id="c0ab9cd8-a707-4756-9f57-daedf0c0e769" class="">In today&#x27;s dynamic and ever-evolving economic landscape, the affordability of life&#x27;s essentials and the financial health of individuals are of paramount importance. For metropolitan regions across the United States, including the vibrant and diverse Tampa Bay area, understanding and assessing affordability has become a central focus of regional development initiatives. In this era of urbanisation, where cities and their surrounding regions are hubs of opportunity and aspiration, the ability of residents to access affordable housing, education, healthcare, and everyday necessities is a defining factor in the region&#x27;s prosperity. In this document we will explore the themes of <strong>Affordability</strong> and <strong>Talent Availability </strong>and how<strong> Tampa Bay </strong>compares to other <strong>Metropolitan Statistical Areas (MSAs).</strong></p><p id="04662fdb-0972-42fe-9ed8-e8c4294e142e" class="">
+</p><p id="ebcb4dd5-0e67-4369-8ed4-925cd20b5332" class=""><strong>Metropolitan Statistical Areas(MSA):</strong></p><p id="784b6faa-83d4-4be3-a513-83b505df9fa3" class="">Metropolitan Statistical Areas (MSAs) are geographical regions defined by the U.S. Office of Management and Budget (OMB) for the purpose of collecting and analyzing statistical data related to urban areas and their surrounding communities.</p><p id="c74dd860-0d98-44c3-a655-f4da70e52231" class="">Metropolitan Statistical Areas serve as a valuable tool for understanding the demographic and economic characteristics of urban regions in the United States and are instrumental in shaping policies and resource allocation at both federal and local levels.</p><figure id="3ec872af-c792-4718-ba5e-f0ea94813a00" class="image"><a href="State%20of%20Tampa%20Region-Insights%2033f9418fd4f14460b29b7d0f61d10dfd/Untitled.png"><img style="width:1310px" src="State%20of%20Tampa%20Region-Insights%2033f9418fd4f14460b29b7d0f61d10dfd/Untitled.png"/></a><figcaption><strong>Source</strong>: <mark class="highlight-brown"><a href="https://issuu.com/tampabaypartnership/docs/2023_e-insights_report_final">Tampa-bay-E-Insights-Report</a></mark></figcaption></figure><table id="1220d079-49d8-4d75-9854-eff6fd21726c" class="simple-table"><thead class="simple-table-header"><tr id="681bf784-7498-4875-b6c6-603054c9889a"><th id="t@@s" class="block-color-yellow_background simple-table-header" style="width:447px">Metropolitan Statistical Areas</th><th id="S{sx" class="block-color-yellow_background simple-table-header" style="width:349px"><strong>State</strong></th></tr></thead><tbody><tr id="d21fdaab-2f41-4f37-bc70-f5a357e89501"><td id="t@@s" class="" style="width:447px">Anniston-Oxford-Jacksonville, AL</td><td id="S{sx" class="" style="width:349px">Alabama</td></tr><tr id="100e08c0-4cb5-49c9-8e58-f1859488ec47"><td id="t@@s" class="" style="width:447px">Atlanta-Sandy Springs-Roswell, GA</td><td id="S{sx" class="" style="width:349px">Georgia</td></tr><tr id="e5bc9c95-e9f4-4019-9cdf-ef40bda87905"><td id="t@@s" class="" style="width:447px">Austin-Round Rock, TX</td><td id="S{sx" class="" style="width:349px">Texas</td></tr><tr id="9c9b4596-68f1-421e-a868-dd0b49e2330c"><td id="t@@s" class="" style="width:447px">Baltimore-Columbia-Towson, MD</td><td id="S{sx" class="" style="width:349px">Maryland</td></tr><tr id="c01aff84-5146-4620-a068-87c526086937"><td id="t@@s" class="" style="width:447px">Charlotte-Concord-Gastonia, NC-SC</td><td id="S{sx" class="" style="width:349px">North Carolina</td></tr><tr id="e430dcf2-fee2-4d1e-bb42-3a24c2cb5758"><td id="t@@s" class="" style="width:447px">Dallas-Fort Worth-Arlington, TX</td><td id="S{sx" class="" style="width:349px">Texas</td></tr><tr id="4dacf6a1-d293-40ee-925e-756b9ad1ca8c"><td id="t@@s" class="" style="width:447px">Denver-Aurora-Lakewood, CO</td><td id="S{sx" class="" style="width:349px">Colarado</td></tr><tr id="871e7647-33a0-43e4-87f8-c431b7676ca2"><td id="t@@s" class="" style="width:447px">Houston-The Woodlands-Sugar Land, TX</td><td id="S{sx" class="" style="width:349px">Texas</td></tr><tr id="89e8421a-bc6a-4ba8-9b8b-78c386e88048"><td id="t@@s" class="" style="width:447px">Miami-Fort Lauderdale-West Palm Beach, FL</td><td id="S{sx" class="" style="width:349px">Florida</td></tr><tr id="67657257-8400-45d5-8462-ba9166f06a24"><td id="t@@s" class="" style="width:447px">Minneapolis-St. Paul-Bloomington, MN-WI</td><td id="S{sx" class="" style="width:349px">Minnesota</td></tr><tr id="9281c69a-718d-4def-ac1e-cf5b3fb08a27"><td id="t@@s" class="" style="width:447px">Nashville-Davidson--Murfreesboro--Franklin, TN</td><td id="S{sx" class="" style="width:349px">Tennesse</td></tr><tr id="4a5fd138-4369-47ce-9747-227587663620"><td id="t@@s" class="" style="width:447px">Orlando-Kissimmee-Sanford, FL</td><td id="S{sx" class="" style="width:349px">Florida</td></tr><tr id="4ed2aa31-f1b4-456e-8338-b8db149a5196"><td id="t@@s" class="" style="width:447px">Phoenix-Mesa-Scottsdale, AZ</td><td id="S{sx" class="" style="width:349px">Arizona</td></tr><tr id="4b90ed86-7771-4ed7-9a95-342dec38b82c"><td id="t@@s" class="" style="width:447px">Portland-Vancouver-Hillsboro, OR-WA</td><td id="S{sx" class="" style="width:349px">Oregon</td></tr><tr id="33a993ea-dc4a-45a7-a6f1-faa1d1eb5ad8"><td id="t@@s" class="" style="width:447px">Raleigh, NC</td><td id="S{sx" class="" style="width:349px">North Carolina</td></tr><tr id="83ba603b-a850-4560-ba0b-e5c7b861d418"><td id="t@@s" class="" style="width:447px">St. Louis, MO-IL</td><td id="S{sx" class="" style="width:349px">Missouri</td></tr><tr id="4f6b8eb2-aa03-47df-b44a-9c887d539a0c"><td id="t@@s" class="" style="width:447px">San Antonio-New Braunfels, TX</td><td id="S{sx" class="" style="width:349px">Texas</td></tr><tr id="3d6c2bf2-d88a-42fa-aa42-c96f8a20cb45"><td id="t@@s" class="" style="width:447px">San Diego-Carlsbad, CA</td><td id="S{sx" class="" style="width:349px">California</td></tr><tr id="6b59e57f-7082-4139-ab7c-4745ed916c86"><td id="t@@s" class="" style="width:447px">Seattle-Tacoma-Bellevue, WA</td><td id="S{sx" class="" style="width:349px">Washington</td></tr><tr id="5333644d-c4a3-4a14-a116-220ae73a52bd"><td id="t@@s" class="" style="width:447px">Tampa-St. Petersburg-Clearwater, FL</td><td id="S{sx" class="" style="width:349px">Florida</td></tr></tbody></table><p id="0eb34d45-d405-456a-9ea5-c8ce92facd4a" class="">
+</p><h2 id="4fefc73a-39d6-43d1-a0b2-1c297bef10a4" class="">Affordability</h2><p id="27de8c98-a86b-47a6-a0bc-480dfbd54924" class="">Affordability means whether people can easily pay their bills and have a good life in a certain place. It&#x27;s about if they can comfortably handle their expenses like housing, food, and healthcare without struggling too much.</p><p id="8173e7a8-6901-4f44-950a-78f1f85fd5c2" class="">The goal of this theme would be to provide insights into how affordable it is to reside and thrive in the Tampa Bay area compared to other similar regions. The analysis may help policymakers, businesses, and individuals make informed decisions regarding economic opportunities, housing choices, and overall well-being within the Tampa Bay MSA and its peer MSAs.</p><p id="28cd815d-a459-49df-94d5-880986222919" class="">Some useful socio-economic indicators that may serve to quantify this theme are :</p><ul id="976bf549-4f99-45ce-a29c-22441d6ad757" class="bulleted-list"><li style="list-style-type:disc"><strong><em>Cost of Living and Financial Well-being:</em></strong><p id="400e4314-1ef3-4b04-906d-7988c84a1267" class="">It refers to how much it costs for people to live comfortably in a specific area and how well they can manage their money and financial responsibilities in that place.</p><p id="ceca5de1-c9f6-483a-9c59-059e22546c56" class="">What are some useful metrics to quantify this?</p><ul id="b312ca1e-1dbc-4af9-9e82-a64e36b755bd" class="bulleted-list"><li style="list-style-type:circle"><strong>Median Home Price,Median Rent, Mortgage Rate, Property Tax Rate</strong><p id="974acdc7-0e6a-4ac8-b848-3b7913184e87" class="">This would answer how much money would it require for one to buy/rent to live in a specific metropolitan area. Expensive areas would only attract a smaller strata of work force, making it unaffordable to non-high income groups.</p></li></ul><ul id="f5dd0bf3-375f-4e9c-96b5-990377c5d9fb" class="bulleted-list"><li style="list-style-type:circle"><strong>Grocery Price Index</strong><p id="4dbf8ad9-47cb-486c-9635-6977b67d205c" class="">This would answer how much it would cost to cover basic day to day grocery. It takes in common household commodities like price of milk, eggs, meat, water etc, which are staple to any household.</p></li></ul><ul id="e3cc3752-9c32-400a-a425-a437b143baba" class="bulleted-list"><li style="list-style-type:circle"><strong>Healthcare Costs, Childcare Costs</strong><p id="7280ecec-d041-4fd2-b5b1-86cdf9fbe4f6" class="">This would give you an insight to how much people would have to spend on well-being and health checkups. High costs for childcare would fail to attract work force that have families.</p></li></ul><ul id="3b0693f4-a5eb-4dfb-9624-bedbc793cdb1" class="bulleted-list"><li style="list-style-type:circle"><strong>Consumer Price Index (CPI) </strong><p id="a0361f30-aa0b-41af-86ed-1d02f8c1c655" class="">Is a measure that tracks changes in the average prices paid by consumers for a basket of goods and services over time. It is one of the most widely used indicators for inflation in an economy.</p></li></ul></li></ul><h2 id="f780c797-3bc0-4bdb-bb28-13c4e073afcb" class=""><strong>Talent Availability</strong></h2><p id="38018eef-81ac-459d-8deb-4702cf2aad54" class="">&quot;Talent Availability&quot; means having enough skilled and qualified workers in an area. It&#x27;s crucial for businesses and regions to have the right people with the right skills to succeed and stay competitive.</p><p id="5c88c50e-59f3-4ecf-bbef-4ee7851bdad7" class="">The goal of the Talent Availability theme is to provide insights into the workforce landscape, enabling informed decisions that support economic growth, job opportunities, and the overall prosperity of the region.</p><p id="22633b28-0842-445e-9816-b65996d17aa0" class="">To evaluate the region&#x27;s ability to meet its labor needs we could draw insights from the following:</p><ul id="1a4fefa6-6b00-42eb-9067-0e65fec8f393" class="bulleted-list"><li style="list-style-type:disc"><strong>Number of STEM Graduates: </strong><p id="ee77b86c-4b3a-444c-85ee-e69877e7db65" class="">It provides a nuanced understanding of the skills and expertise available in the local workforce. It enables regions to tailor their strategies for talent development, economic development, and innovation to meet the unique needs and opportunities within their specific STEM-related industries.</p></li></ul><ul id="f8c694fa-8b74-40ad-958f-564856ec6b8f" class="bulleted-list"><li style="list-style-type:disc"><strong>Labor Force Participation Rate(LFPR): </strong><p id="6f756305-e6ba-473e-8cd5-006797091b07" class="">The LFPR measures the proportion of the working-age population (typically ages 16 and older) that is actively engaged in the labor force, either through employment or actively seeking employment. It provides insights into how many people are actively participating in the job market.</p><ul id="08611c57-792b-48a2-b50a-2827d97852a2" class="bulleted-list"><li style="list-style-type:circle">LFPR is directly related to the theme of talent availability. A higher LFPR means a larger pool of available workers, which can be attractive to businesses considering expansion or relocation.</li></ul></li></ul><ul id="dab40f09-5784-49be-8c9d-ef7620a99a8d" class="bulleted-list"><li style="list-style-type:disc"><strong>Wage Growth Rate: </strong><p id="18c5e302-bf52-48fc-b9ce-d7a9926c884c" class="">Wage growth is a key indicator of the overall economic health of a region or country. A rising wage growth rate typically suggests a growing economy, increased consumer spending power, and improved standards of living for workers.</p><ul id="f9b53cf4-fc08-4c47-97ef-2bc74a8d1839" class="bulleted-list"><li style="list-style-type:circle">A strong wage growth rate can attract skilled workers to a region, making it more competitive in the talent market.</li></ul><ul id="94438713-ad2d-478e-b1ce-bbd653e76830" class="bulleted-list"><li style="list-style-type:circle">Wage growth can help individuals and households maintain or increase their purchasing power.</li></ul><ul id="742ec746-104e-48df-bb83-911941950618" class="bulleted-list"><li style="list-style-type:circle">High wage growth can be indicative of a competitive labor market with talent shortages.</li></ul></li></ul><p id="790f5739-0b7d-4736-b1be-679a2570e464" class="">
+</p><h2 id="6db1361f-125d-47fb-9704-6db3b2b5e552" class="">Closer Look at few of these metrics</h2><p id="15784f48-51b9-43ff-b417-adda373c0161" class="">
+</p><h3 id="322c2208-4faf-485b-a22e-5c4c53c4093b" class=""><strong>Consumer Price Index (CPI) </strong></h3><p id="ec61f851-e587-4e18-a400-8728a3cb8d18" class="">We recall that CPI is a measure that tracks changes in the average prices paid by consumers for a basket of goods and services over time. It is one of the most widely used indicators for inflation in an economy.</p><ul id="b5db7e8c-b4e2-4a1b-aa9f-21d2cd4073f3" class="bulleted-list"><li style="list-style-type:disc">The CPI is used to track inflation and changes in the cost of living.</li></ul><ul id="973feb0b-0def-41df-b17b-381a2c0f67ff" class="bulleted-list"><li style="list-style-type:disc">What does the number indicate?</li></ul><table id="7d0b62c6-a1ce-449a-8e38-18f6cb578cc3" class="simple-table"><tbody><tr id="02a96800-f628-4e87-accb-9658a7088019"><td id="a&gt;gp" class="" style="width:129px">CPI</td><td id="R|o]" class="" style="width:726px">Inference</td></tr><tr id="89c30700-fd72-4261-a35a-9648af13a85f"><td id="a&gt;gp" class="" style="width:129px"><strong>CPI Below 100</strong></td><td id="R|o]" class="" style="width:726px">Indicates that, on average, prices for the selected goods and services have decreased since the base year. This is known as deflation.</td></tr><tr id="23f35fd6-fc81-4163-bd88-78aea789f379"><td id="a&gt;gp" class="" style="width:129px"><strong>CPI Around 100</strong></td><td id="R|o]" class="" style="width:726px">Suggests that prices have remained relatively stable compared to the base year. There is little to no inflation or deflation.</td></tr><tr id="2d05e6c3-7b88-4b89-a77a-4ef5c73d2ca7"><td id="a&gt;gp" class="" style="width:129px"><strong>CPI Above 100</strong></td><td id="R|o]" class="" style="width:726px">Indicates that, on average, prices have increased since the base year. The higher the CPI value, the greater the level of inflation.</td></tr></tbody></table><p id="f02f5995-2df2-49b1-8d62-76d3343186ee" class="">Furthermore,<strong>CPI Changes Over Time.</strong><div class="indented"><ul id="b069cf4b-3fe9-4cb6-aef5-d751c4897f04" class="bulleted-list"><li style="list-style-type:disc"> Analyzing CPI changes over time is more informative than focusing on a specific CPI value. For example, if the CPI increased from 120 to 130 over a year, it suggests a 10% inflation rate during that year.</li></ul></div></p><figure id="b3c75eb7-386d-4250-91a2-2c1449e2636d" class="image" style="text-align:center"><a href="State%20of%20Tampa%20Region-Insights%2033f9418fd4f14460b29b7d0f61d10dfd/Untitled%201.png"><img style="width:912px" src="State%20of%20Tampa%20Region-Insights%2033f9418fd4f14460b29b7d0f61d10dfd/Untitled%201.png"/></a><figcaption>Source :  <a href="https://www.bls.gov/home.htm">US.Bureau of Labor Statistics</a></figcaption></figure><p id="29d79df8-e13f-4bb1-8bd7-b26d4fa75d26" class="">About the data: The data in picture was taken from the US Bureau of Labor Statistics. The period was from 2021 to 2023.</p><p id="a16017b8-5c50-464f-ae86-3b686365f04b" class="">Insights:</p><ul id="fbec44aa-8d51-4080-95ae-d477a1c20c8b" class="bulleted-list"><li style="list-style-type:disc">As we look at the trend of CPI overtime, we see that CPI has increased for all MSAs overtime. Though, some having steeper inclines as others.</li></ul><ul id="abaa8f2e-c685-4c3a-8237-9cc16e833d84" class="bulleted-list"><li style="list-style-type:disc">As it stands, Tampa ranks 4 in terms of current CPI.</li></ul><ul id="013c6f08-2b64-41a2-b509-d4f4c1394257" class="bulleted-list"><li style="list-style-type:disc">Let us take a closer look though.</li></ul><figure id="3231d5bb-6b25-4b0c-b2f6-b54e2067933d" class="image"><a href="State%20of%20Tampa%20Region-Insights%2033f9418fd4f14460b29b7d0f61d10dfd/Untitled%202.png"><img style="width:1704px" src="State%20of%20Tampa%20Region-Insights%2033f9418fd4f14460b29b7d0f61d10dfd/Untitled%202.png"/></a></figure><ul id="54832590-d7ee-4915-838d-674d9af9f4f3" class="bulleted-list"><li style="list-style-type:disc">Tampa’s CPI is growing quickly month on month. From this data we see that Tampa’s CPI is increasing at a rate of roughly 1.4% month on month.</li></ul><ul id="b0071f5d-0a66-4c69-9046-5f4a0e71616f" class="bulleted-list"><li style="list-style-type:disc">Effects of a rapidly increasing CPI:<ul id="73a95b62-ebc1-4728-a8d0-e060a1c23a52" class="bulleted-list"><li style="list-style-type:circle">A fast and significant increase in the Consumer Price Index (CPI), often referred to as rapid inflation, can have several notable effects on individuals, businesses, and the overall economy.</li></ul><ul id="41d82b8f-3fb2-4bb5-aaf7-d98ddd77b0eb" class="bulleted-list"><li style="list-style-type:circle">Rapid CPI increases mean that the prices of goods and services are rising quickly. As a result, the purchasing power of consumers is eroded because they need to spend more money to buy the same goods and services they previously could afford.</li></ul><ul id="4259638c-7062-4895-af1f-2b18ecb5ce71" class="bulleted-list"><li style="list-style-type:circle">Rising prices for raw materials and inputs can increase production costs for businesses. They may pass these costs onto consumers through higher prices, contributing to a cycle of inflation.</li></ul></li></ul><p id="19dcccec-0c7e-4764-afca-da748b294f2b" class="">
+</p><h2 id="7290d500-c308-4f66-85b6-613d1662a080" class=""><strong>Wage Growth Trends</strong></h2><p id="c06270f5-d328-4947-93d6-a29c3a63689c" class="">Wage growth trends refer to the patterns and changes in the average wages or salaries earned by workers over a specific period of time</p><p id="fc55bfee-77da-4ab0-9eb9-6223b7ebf2b3" class="">What does it signify?</p><ul id="139c38d7-08bc-4300-81cb-f580094f545f" class="bulleted-list"><li style="list-style-type:disc">Wage growth trends provide insights into the overall economic health of a region or country. Positive wage growth typically indicates a growing economy, increased consumer purchasing power, and improved standards of living for workers.</li></ul><ul id="dbb23e2e-156a-4046-9456-e5ff3f893f7f" class="bulleted-list"><li style="list-style-type:disc">Investors and financial markets closely monitor wage growth as it can impact corporate earnings, stock market performance, and investment decisions.</li></ul><ul id="3bfbba58-59d2-4df4-aa38-a407abe89a91" class="bulleted-list"><li style="list-style-type:disc">Regions with strong wage growth trends may be more attractive to skilled workers. Businesses in these areas may have an advantage in attracting and retaining talent.</li></ul><p id="feb6cf54-2dba-4320-9a55-e14a2b51b17a" class="">
+</p><figure id="b90917ce-d762-498c-984b-c33f8a649390" class="image"><a href="State%20of%20Tampa%20Region-Insights%2033f9418fd4f14460b29b7d0f61d10dfd/Untitled%203.png"><img style="width:912px" src="State%20of%20Tampa%20Region-Insights%2033f9418fd4f14460b29b7d0f61d10dfd/Untitled%203.png"/></a><figcaption>Source:<a href="https://www.bls.gov/charts/metro-area-employment-and-unemployment/metro-area-oty-percent-change-in-average-weekly-earnings.htm">US.Labour Statistics</a></figcaption></figure><p id="0f9638f6-a081-48ac-8b08-f24123fcdbce" class="">About the data: </p><ul id="cb5a0566-e580-4f7f-b7e2-d308b3a4f4fb" class="bulleted-list"><li style="list-style-type:disc">The dataset contains: <em>total private average weekly earnings for metropolitan areas, July 2022 to July 2023, not seasonally adjusted</em></li></ul><p id="6f898aea-3a24-4f46-8fa7-034e0d6d5026" class=""><strong>Insights:</strong></p><ul id="0c45b2c7-962a-46ff-94ab-30f77054455f" class="bulleted-list"><li style="list-style-type:disc">It is clear that a higher percentage increase would mean that people now earn more than they used to.</li></ul><ul id="729cabda-f817-4f0d-ad47-537313168259" class="bulleted-list"><li style="list-style-type:disc">Tampa had a gain of 2.6% in <em>private average weekly earnings, </em>which is ranked the 3rd worst amongst the other MSAs.</li></ul><ul id="1335f287-5e89-4523-a6b2-1aa7a8dfeb0d" class="bulleted-list"><li style="list-style-type:disc">Policy makers,Labor Organizations and Economic and Workforce Development Agencies have to find ways to have a healthier increase in average wage.</li></ul><h3 id="d6ce99a2-68b5-47fa-98bd-17b9253d0056" class="">Closer look at what the wages compare</h3><figure id="7595fe50-f83e-4e89-9ca5-51533cbe46b1" class="image"><a href="State%20of%20Tampa%20Region-Insights%2033f9418fd4f14460b29b7d0f61d10dfd/Untitled%204.png"><img style="width:960px" src="State%20of%20Tampa%20Region-Insights%2033f9418fd4f14460b29b7d0f61d10dfd/Untitled%204.png"/></a></figure><p id="712c8aac-7007-4840-b051-d04afcc14a0e" class="">For Tampa in particular:</p><table id="76ba576e-5351-4c41-b7f7-90983177e020" class="simple-table"><tbody><tr id="92badc03-21c7-4a45-9d0f-4a7a8ca15040"><td id="~?m[" class="">Metropolitan Area</td><td id="Q&lt;}Q" class="">June 2022</td><td id="wSBJ" class="">July 2023</td><td id="yHlG" class="">% Increase</td></tr><tr id="0e181e1d-76c4-427c-be76-b19cb37cea4c"><td id="~?m[" class="">Tampa</td><td id="Q&lt;}Q" class="">1,042.66</td><td id="wSBJ" class="">1,069.98</td><td id="yHlG" class=""><mark class="highlight-red_background">2.6</mark></td></tr></tbody></table><p id="a7ffd6d8-33ae-459c-914e-89e7080a9b32" class="">
+</p><h2 id="24fa6304-9453-4fde-a4b6-e73dc2faae2a" class="">Debt-to-Income (DTI) ratio</h2><p id="ecadb05d-63a0-4fd3-80bf-8d55ddeb8b19" class="">The Debt-to-Income (DTI) ratio is a financial metric that measures the relationship between an individual&#x27;s or a household&#x27;s total monthly debt payments and their gross monthly income.</p><figure id="9781a4c9-c916-461f-8037-da515337e197" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>D</mi><mi>T</mi><mi>I</mi><mo>=</mo><mfrac><mrow><mi>T</mi><mi>o</mi><mi>t</mi><mi>a</mi><mi>l</mi><mtext> </mtext><mi>M</mi><mi>o</mi><mi>n</mi><mi>t</mi><mi>h</mi><mi>l</mi><mi>y</mi><mtext> </mtext><mi>D</mi><mi>e</mi><mi>b</mi><mi>t</mi><mtext> </mtext><mi>P</mi><mi>a</mi><mi>y</mi><mi>m</mi><mi>e</mi><mi>n</mi><mi>t</mi><mi>s</mi></mrow><mrow><mi>G</mi><mi>r</mi><mi>o</mi><mi>s</mi><mi>s</mi><mtext> </mtext><mi>M</mi><mi>o</mi><mi>n</mi><mi>t</mi><mi>h</mi><mi>l</mi><mi>y</mi><mtext> </mtext><mi>I</mi><mi>n</mi><mi>c</mi><mi>o</mi><mi>m</mi><mi>e</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">DTI =  \frac{Total \, Monthly \, Debt\,Payments}{Gross\,Monthly\, Income}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.25188em;vertical-align:-0.8804400000000001em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714399999999998em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">G</span><span class="mord mathnormal">ross</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mord mathnormal">o</span><span class="mord mathnormal">n</span><span class="mord mathnormal">t</span><span class="mord mathnormal">h</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mord mathnormal">n</span><span class="mord mathnormal">co</span><span class="mord mathnormal">m</span><span class="mord mathnormal">e</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mord mathnormal">o</span><span class="mord mathnormal">t</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mord mathnormal">o</span><span class="mord mathnormal">n</span><span class="mord mathnormal">t</span><span class="mord mathnormal">h</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">De</span><span class="mord mathnormal">b</span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mord mathnormal">m</span><span class="mord mathnormal">e</span><span class="mord mathnormal">n</span><span class="mord mathnormal">t</span><span class="mord mathnormal">s</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804400000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></div></figure><p id="9f52f471-97e9-49d8-98bf-a3553a48d82e" class="">It is a relevant and important financial metric that can provide valuable insights into the financial health and affordability of individuals within a Metropolitan Statistical Area (MSA).</p><p id="5b753e74-3310-4f6d-baa9-11cccfb6a1a5" class="">What Insights could Debt to Income Ratio bring out?</p><ul id="0146aec0-7ebb-4a17-bcd4-d0061d46c9b4" class="bulleted-list"><li style="list-style-type:disc"><strong>Housing Affordability:</strong> DTI is a critical factor in assessing housing affordability. A high DTI ratio can make it challenging for individuals or households to qualify for mortgages or afford housing costs, impacting the real estate market within the MSA.</li></ul><ul id="f32775c4-cef7-4375-b96b-00db48479ad7" class="bulleted-list"><li style="list-style-type:disc"><strong>Consumer Spending Capacity:</strong> Residents with lower DTI ratios typically have more disposable income, which can stimulate consumer spending, drive local economic activity, and boost the overall economy of the MSA.</li></ul><ul id="cd704072-cd2d-4105-8565-1aba80a16a00" class="bulleted-list"><li style="list-style-type:disc"><strong>Individual Financial Health:</strong> The DTI ratio measures the proportion of an individual&#x27;s income that goes toward debt obligations, such as mortgage payments, student loans, credit card debt, and other loans. High DTI ratios may indicate financial stress and reduced affordability for residents in the MSA.</li></ul><figure id="7fb67e66-9ba2-427c-ba20-d1b07b906cb7" class="image"><a href="State%20of%20Tampa%20Region-Insights%2033f9418fd4f14460b29b7d0f61d10dfd/Untitled%205.png"><img style="width:1674px" src="State%20of%20Tampa%20Region-Insights%2033f9418fd4f14460b29b7d0f61d10dfd/Untitled%205.png"/></a><figcaption>Source:<a href="https://www.federalreserve.gov/releases/z1/dataviz/household_debt/msa/map/#year:2023">US federal Reserve</a></figcaption></figure><p id="5879cdc8-9fa1-4df7-acdb-83f313fac892" class="">About the data: Data collected from Us federal Reserve has 2023 Debt to Income Ratio data across different MSAs.</p><p id="411c154e-ce39-4d0e-9be0-0e149cc3763d" class=""><strong>Insights:</strong></p><ul id="fd2ee09c-71ec-44d3-becb-9cc459bb8f5a" class="bulleted-list"><li style="list-style-type:disc">Tampa has a debt to income ratio of over 1.5 and ranks as the 3rd worst DTI amongst other MSAs.</li></ul><ul id="146801ff-4f94-435e-813e-5dfba4fa6ab4" class="bulleted-list"><li style="list-style-type:disc">This means that if your DTI ratio is 1.5 or 150%, it indicates that your total debt payments each month are 150% of your gross monthly income.</li></ul><ul id="08d16b49-69f5-401f-8928-6ebb71113c8d" class="bulleted-list"><li style="list-style-type:disc">High individual DTI ratios may limit residents&#x27; ability to access credit or obtain loans, such as mortgages or personal loans. This can affect homeownership rates and the ability to invest in real estate.</li></ul><ul id="212ff783-12de-46eb-bdb9-f51c766c0d5c" class="bulleted-list"><li style="list-style-type:disc">Local Government and Organizations have to mitigate it by the following ways:<ul id="3a05d93d-a184-4fe9-b057-278819a18d8a" class="bulleted-list"><li style="list-style-type:circle"><strong>Affordable Housing Initiatives:</strong> Support initiatives to increase the availability of affordable housing within the MSA, as housing costs are often a significant contributor to high DTI ratios.</li></ul><ul id="12837ee9-fb13-4691-b69a-f36b8363e580" class="bulleted-list"><li style="list-style-type:circle"><strong>Credit-Building Programs:</strong> Support programs that help residents build or rebuild their credit, which can lead to better access to credit at lower interest rates.</li></ul><ul id="6decdfa0-f5c8-4dd6-89d9-851781218a16" class="bulleted-list"><li style="list-style-type:circle"><strong>Access to Financial Services:</strong> Promote access to affordable banking and financial services, particularly for underserved communities, to help residents manage their finances effectively.</li></ul></li></ul><p id="d5ee6d5f-e2b9-45df-aa73-a9ab3564f641" class="">
+</p><p id="aeafb88e-d66a-4d44-82b4-693251beec11" class="">
+</p><h2 id="243abaef-627e-467a-841b-bd8ce1e2d74d" class=""><strong>Conclusion</strong></h2><p id="8e75d1a5-23ca-4d71-8712-54c3420d5217" class="">In our analysis of the Tampa Bay Metropolitan Statistical Area (MSA), we&#x27;ve uncovered key insights into the themes of Affordability and Talent Availability. Our findings emphasize the importance of addressing challenges like housing affordability and improving access to education and employment opportunities. High debt-to-income ratios, for instance, not only impact personal finances but also influence the broader regional economy.</p><p id="7b8b60ae-1c8e-42c3-a83d-9aef74096739" class="">The road to a prosperous future for the Tampa Bay MSA involves collaboration, innovation, and a commitment to creating an environment that fosters economic resilience and a high quality of life for all residents. This report serves as a call to action, highlighting areas where positive change can lead to a brighter future for the region.</p><p id="c18e0d8a-36fa-4f1f-9180-54c8994e175b" class="">
+</p></div></article></body></html>
