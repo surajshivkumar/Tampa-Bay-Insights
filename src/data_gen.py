@@ -23,7 +23,7 @@ target_mssa = ['Miami-Fort Lauderdale-West Palm Beach, FL',
                'Raleigh, NC'
                ]
 filter_condition = "AREA_TITLE.isin(target_mssa)"
-df = pd.read_excel('./data2/MSA_M2022_dl.xlsx',usecols=['AREA_TITLE','OCC_TITLE',
+df = pd.read_excel('../data/Wage_MSA_data/MSA_M2022_dl.xlsx',usecols=['AREA_TITLE','OCC_TITLE',
                                                 'TOT_EMP',
                                                 'EMP_PRSE',
                                                 'JOBS_1000',
@@ -36,5 +36,5 @@ df = pd.read_excel('./data2/MSA_M2022_dl.xlsx',usecols=['AREA_TITLE','OCC_TITLE'
 df = df[df.AREA_TITLE.isin(target_mssa)]
 mapping = {i:i.split('-')[0] for i in df.AREA_TITLE.unique()}
 df['Metro_Name'] = df.AREA_TITLE.map(lambda x : mapping[x])
-df.to_csv('./data/data_wage.csv')
+df.to_csv('../data_out/data_wage.csv')
 
