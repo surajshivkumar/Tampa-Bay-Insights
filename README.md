@@ -1,3 +1,4 @@
+![**Source**: [Tampa-bay-E-Insights-Report](https://issuu.com/tampabaypartnership/docs/2023_e-insights_report_final)](ext/Tmap.jpeg)
 # State of Tampa Region-Insights
 
 ### Introduction
